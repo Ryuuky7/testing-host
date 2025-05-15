@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PengisianKRS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #40E0D0, #008080);
+        color: #ffffff;
+      }
+      .navbar {
+        background-color: #008080;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        color: #ffffff !important;
+      }
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+      }
+      .list-group-item {
+        background-color: #ffffff;
+        color: #008080;
+        border: none;
+      }
+      .list-group-item.active {
+        background-color: #008080;
+        color: #ffffff;
+      }
+      .card {
+        background-color: #ffffff;
+        color: #000000; /* Set text color to black */
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        background-color: #008080;
+        color: #ffffff;
+        border-radius: 15px 15px 0 0;
+      }
+      .btn-outline-info {
+        color: #008080;
+        border-color: #008080;
+      }
+      .btn-outline-info:hover {
+        background-color: #008080;
+        color: #ffffff;
+      }
+      footer {
+        background-color: #008080;
+        color: #ffffff;
+        padding: 10px 0;
+      }
+      footer a {
+        color: #40E0D0;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      .social-icons .nav-link {
+        color: #ffffff !important;
+        font-size: 1.2rem;
+      }
+      .social-icons .nav-link:hover {
+        color: #40E0D0 !important;
+      }
+      .signature {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+            <img src="gambaradmin/Logo_utm-removebg-preview.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+            SISTEM INFORMASI AKADEMIK
+          </a>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav social-icons">
+              <li class="nav-item">
+                <a class="nav-link" href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+
+      <!-- Layout -->
+      <div class="row">
+
+        <div class="col-md-3">
+            <!-- Menu -->
+            <div class="list-group mb-3">
+              <a href="#" class="list-group-item list-group-item-action active" style="background-color: #008080; border: none;">
+                <strong>MENU</strong>
+              </a>
+              <a href="dashboard.html" class="list-group-item">
+                <i class="fas fa-house"></i> Beranda</a>
+              <a href="#submenuMahasiswa" class="list-group-item list-group-item-action" data-bs-toggle="collapse">
+                <i class="fas fa-user"></i> MAHASISWA
+              </a>
+              <div id="submenuMahasiswa" class="collapse">
+                <a href="daftarmahasiswa.html" class="list-group-item list-group-item-action">Daftar Mahasiswa</a>
+                <a href="tambahmahasiswa.html" class="list-group-item list-group-item-action">Tambah Mahasiswa</a>
+                <a href="editmahasiswa.html" class="list-group-item list-group-item-action">Ubah Mahasiswa</a>
+              </div>
+              <a href="#submenuDosen" class="list-group-item list-group-item-action" data-bs-toggle="collapse">
+                <i class="fas fa-chalkboard-teacher"></i> DOSEN
+              </a>
+              <div id="submenuDosen" class="collapse">
+                <a href="daftardosen.html" class="list-group-item list-group-item-action">Daftar Dosen</a>
+                <a href="tambahdoesn.html" class="list-group-item list-group-item-action">Tambah Dosen</a>
+                <a href="ubahdosen.html" class="list-group-item list-group-item-action">Ubah Dosen</a>
+              </div>
+              <a href="#submenuMataKuliah" class="list-group-item list-group-item-action" data-bs-toggle="collapse">
+                <i class="fas fa-book"></i> MATA KULIAH
+              </a>
+              <div id="submenuMataKuliah" class="collapse">
+                <a href="Daftarmatkul.html" class="list-group-item list-group-item-action">Daftar Mata Kuliah</a>
+                <a href="tambahmatkul.html" class="list-group-item list-group-item-action">Tambah Mata Kuliah</a>
+                <a href="ubahmatkul.html" class="list-group-item list-group-item-action">Ubah Mata Kuliah</a>
+              </div>
+              <a href="#submenuKRS" class="list-group-item list-group-item-action" data-bs-toggle="collapse">
+                <i class="fas fa-file-alt"></i> KRS
+              </a>
+              <div id="submenuKRS" class="collapse">
+                <a href="PengisianKRS.html" class="list-group-item list-group-item-action">Pengisian KRS</a>
+                <a href="TampilKRS.html" class="list-group-item list-group-item-action">Tampil KRS</a>
+              </div>
+              <a href="khs.html" class="list-group-item list-group-item-action"><i class="fas fa-file"></i> KHS</a>
+              <a href="halamanlogin.html" class="list-group-item list-group-item-action"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+            </div>
+
+            <!-- Info Card -->
+            <div class="card">
+              <div class="card-header">Info Penting!</div>
+              <div class="card-body">
+                <p class="card-text">Pengisian KRS mulai tanggal:</p>
+                <p>18 Maret - 30 Maret 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Pengisian Kartu Rencana Studi (KRS)</h2>
+                    <h5 id="currentDate"></h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <p><strong>NAMA:</strong> Rizki Subandi Aminullah</p>
+                        <p><strong>NIM:</strong> 23TI048</p>
+                        <p><strong>JURUSAN:</strong> Teknik Informatika</p>
+                        <p><strong>SEMESTER:</strong> 3</p>
+                        <p><strong>KELAS:</strong> TI-A</p>
+                        <p><strong>TAHUN AKADEMIK:</strong> 2025</p>
+                        <p><strong>DOSEN WALI:</strong> Dr. Muhammad Multazam. S.Kom., M.Kom</p>
+                    </div>
+        
+                    
+                    <div class="table-responsive">
+                    <table class="table table-bordered mt-3" id="courseTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Kode</th>
+                                <th>Matakuliah</th>
+                                <th>SKS</th>
+                                <th>SMTR</th>
+                                <th>Dosen Pengajar</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data akan ditambahkan di sini -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" class="text-end"><strong>Total SKS:</strong> <span id="totalSKS">0</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    </div>
+
+                    <div style="text-align: right;">
+                      <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <a href="TampilKRS.html">
+                    <button type="button" class="btn btn-outline-success">
+                      <i class="fa-solid fa-floppy-disk"></i>
+                  </button></a>
+                    </div>
+                    
+        
+                    <!-- Modal -->
+                    <div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addCourseModalLabel">Pilih Mata Kuliah</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Matakuliah</th>
+                                                <th>SKS</th>
+                                                <th>Semester</th>
+                                                <th>Dosen</th>
+                                                <th>Pilih</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                              <td>Matematika Diskrit</td>
+                                              <td>3</td>
+                                              <td>3</td>
+                                              <td>Karina Nurwijayanti, M.Pdd</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK001" data-matakuliah="Matematika Diskrit" data-sks="3" data-smtr="3" data-keterangan="	Karina Nurwijayanti, M.Pdd">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Technopreneur</td>
+                                              <td>2</td>
+                                              <td>3</td>
+                                              <td>Dr. Dwinita Arwidiyarti. S.Kom., M.Kom</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK002" data-matakuliah="Technopreneur" data-sks="2" data-smtr="3" data-keterangan="Dr. Dwinita Arwidiyarti. S.Kom., M.Kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Algoritma dan Pemrograman</td>
+                                              <td>3</td>
+                                              <td>3</td>
+                                              <td>Zaeniah, M.kom</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK003" data-matakuliah="Algoritma dan Pemrograman" data-sks="3" data-smtr="3" data-keterangan="Zaeniah, m.kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Pendidikan Agama</td>
+                                              <td>2</td>
+                                              <td>3</td>
+                                              <td>Satria Umami, M.Pd</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK004" data-matakuliah="Pendidikan Agama" data-sks="2" data-smtr="3" data-keterangan="	Ahmad Yani, S.Kom., M.Kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Interaksi Manusia & Komputer</td>
+                                              <td>2</td>
+                                              <td>3</td>
+                                              <td>Dr. Muhammad Multazam. S.Kom., M.Kom</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK005" data-matakuliah="Interaksi Manusia & Komputer" data-sks="2" data-smtr="3" data-keterangan="Dr.Muhammad Multazam. S.kom.,M.Kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Struktur Data</td>
+                                              <td>3</td>
+                                              <td>3</td>
+                                              <td>Zaeniah, M.kom</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK006" data-matakuliah="Struktur Data" data-sks="3" data-smtr="3" data-keterangan="	Zaeniah, m.kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Interaksi Manusia & Komputer</td>
+                                              <td>2</td>
+                                              <td>3</td>
+                                              <td>Siti Tuhpatussania, M.Kom</td>
+                                              <td>
+                                                  <button class="btn btn-outline-success select-course" data-kode="MK007" data-matakuliah="Interaksi Manusia & Komputer" data-sks="2" data-smtr="3" data-keterangan="Siti Tuhpatussania, M.Kom">
+                                                      <i class="fas fa-check-circle"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Sistem Operasi</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>Zaenul Mutaqin jpg Png ZIp</td>
+                                            <td>
+                                                <button class="btn btn-outline-success select-course" data-kode="MK008" data-matakuliah="Sistem Operasi" data-sks="3" data-smtr="3" data-keterangan="Zaenul Mutaqin jpg Png ZIp">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                          <td>Arsitektur dan Organisasi Komputer</td>
+                                          <td>3</td>
+                                          <td>3</td>
+                                          <td>Ahmad Yani, S.Kom., M.Kom</td>
+                                          <td>
+                                              <button class="btn btn-outline-success select-course" data-kode="MK009" data-matakuliah="Arsitektur dan Organisasi Komputer" data-sks="3" data-smtr="3" data-keterangan="Ahmad Yani, S.Kom., M.Kom">
+                                                  <i class="fas fa-check-circle"></i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      </tbody>
+                                      
+                                      
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const courseTableBody = document.querySelector('#courseTable tbody');
+                            const totalSKSDisplay = document.querySelector('#totalSKS');
+                            const currentDateDisplay = document.querySelector('#currentDate');
+                            const courseSelectButtons = document.querySelectorAll('.select-course');
+        
+                            let totalSKS = 0;
+        
+                            // Set the current date
+                            const currentDate = new Date();
+                            currentDateDisplay.textContent = currentDate.toLocaleDateString();
+        
+                            courseSelectButtons.forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const kode = button.getAttribute('data-kode');
+                                    const matakuliah = button.getAttribute('data-matakuliah');
+                                    const sks = parseInt(button.getAttribute('data-sks'));
+                                    const smtr = button.getAttribute('data-smtr');
+                                    const keterangan = button.getAttribute('data-keterangan');
+        
+                                    // Check for duplicate course
+                                    if ([...courseTableBody.querySelectorAll('tr')].some(row => row.cells[0].textContent === kode)) {
+                                        alert('Mata kuliah ini sudah ditambahkan!');
+                                        return;
+                                    }
+        
+                                    // Tambahkan baris ke tabel
+                                    const newRow = document.createElement('tr');
+                                    newRow.innerHTML = `
+                                        <td>${kode}</td>
+                                        <td>${matakuliah}</td>
+                                        <td>${sks}</td>
+                                        <td>${smtr}</td>
+                                        <td>${keterangan}</td>
+                                        <td><button class="btn btn-danger btn-sm delete-course">Hapus</button></td>
+                                    `;
+        
+                                    courseTableBody.appendChild(newRow);
+        
+                                    // Tambahkan SKS ke total
+                                    totalSKS += sks;
+                                    totalSKSDisplay.textContent = totalSKS;
+        
+                                    // Tambahkan event listener untuk tombol hapus
+                                    newRow.querySelector('.delete-course').addEventListener('click', () => {
+                                        newRow.remove();
+                                        totalSKS -= sks;
+                                        totalSKSDisplay.textContent = totalSKS;
+                                    });
+        
+                                    // Tutup modal
+                                    const modal = bootstrap.Modal.getInstance(document.querySelector('#addCourseModal'));
+                                    modal.hide();
+                                });
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+
+      <footer class="text-center mt-4">&copy; 2025 Universitas Teknologi Mataram | by Ryuumi_</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

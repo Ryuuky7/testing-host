@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login SIAKAD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #40E0D0, #008080);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .login-container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+        .login-container h1 {
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #008080;
+            border-bottom: 2px solid #40E0D0;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            box-shadow: 0 0 8px #40E0D0;
+        }
+        .login-button {
+            padding: 12px;
+            background-color: #008080;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+        .login-button:hover {
+            background-color: #006666;
+            transform: translateY(-2px);
+        }
+        .extra-links {
+            margin-top: 20px;
+        }
+        .extra-links a {
+            color: #008080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer a {
+            color: #008080;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .icon-container {
+            margin-bottom: 20px;
+        }
+        .icon-container img {
+            width: 80px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+        <div class="icon-container">
+            <img src="gambaradmin/icon_login.png" alt="Login Icon">
+        </div>
+        <!--<h1>Login SIAKAD</h1>-->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan Username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+        <div class="extra-links">
+            <a href="#">Lupa Password?</a>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Universitas Teknologi Mataram | by Ryuumi_ <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (username === "" || password === "") {
+                errorMessage.textContent = "Username dan password harus diisi.";
+                return;
+            }
+
+            if (username === "admin" && password === "admin123") {
+                alert("Login berhasil!");
+                window.location.href = "dashboard.html";
+            } else {
+                errorMessage.textContent = "Username atau password salah.";
+            }
+        });
+    </script>
+  </body>
+</html>
